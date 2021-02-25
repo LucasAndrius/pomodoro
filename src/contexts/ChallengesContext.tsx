@@ -17,6 +17,7 @@ interface challengesContextDate{
     levelUp:() => void;
     startNewChallange: () => void;
     resetChallenge:() => void;
+    completedChallenge:()=> void;
     
 }
 
@@ -55,9 +56,30 @@ export function ChallengesProvier({children}:ChallengesProvierProps){
         setActiveChallenge(null);
     }
 
+
+    function completedChallenge(){ 
+        if(!activeChallenge) {
+            return;
+        }
+
+        const { amount } = activeChallenge;
+
+        let finalExperience = currentExperience + amount;
+
+        if(finalExperience > experienceToNextLevel){
+            finalExperience = finalExperience - experienceToNextLevel;
+            levelUp();
+        }
+
+        setCurrentExperience(finalExperience);
+        setActiveChallenge(null);
+        setChallangesCompleted(challengesCompleted+1);
+    }
+
+
     return (
         
-        <ChallengesContext.Provider 
+        <ChallengesContext.Provider  //contexto / regras
             value={
                 {
                     level,
@@ -67,7 +89,8 @@ export function ChallengesProvier({children}:ChallengesProvierProps){
                     startNewChallange,
                     activeChallenge,
                     resetChallenge,
-                    experienceToNextLevel
+                    experienceToNextLevel,
+                    completedChallenge
                 }
             }>
 

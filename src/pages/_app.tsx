@@ -10,8 +10,6 @@ function MyApp({ Component, pageProps }) {
      <ChallengesProvier>
        <Component {...pageProps} />
      </ChallengesProvier>
-      
-    
     );
 }
 

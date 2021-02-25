@@ -8,6 +8,7 @@ import { ChallengeBox } from '../components/ChallengeBox';
 
 
 import styles from '../styles/pages/Home.module.css';
+import { CountdownProvider } from '../contexts/CountdownContext';
 
 
 
@@ -18,16 +19,19 @@ export default function Home() {
         <title>Inicio | Pomodoro</title>
       </Head>
       <ExperienceBar/>
-      <section>
-        <div>
-          <Profile />
-          <CompletedChellenges/>
-          <CountDown/>
-        </div>
-        <div>
-          <ChallengeBox/>
-        </div>
+
+      <CountdownProvider>
+          <section>
+            <div>
+              <Profile />
+                <CompletedChellenges/>
+              <CountDown/>
+            </div>
+            <div>
+              <ChallengeBox/>
+            </div>
       </section>
+      </CountdownProvider>
     </div>
   )
 }
