@@ -25,7 +25,7 @@ interface challengesContextDate{
     
 }
 
-interface ChallengesProvierProps{
+interface ChallengesProviderProps{
     children: ReactNode;
     level:number;
     currentExperience:number;
@@ -41,7 +41,7 @@ export function ChallengesProvier({
     children,
     ...rest
     
-}:ChallengesProvierProps){
+}:ChallengesProviderProps){
 
     const   [level, setLevel] = useState(rest.level ?? 1);
     const   [currentExperience,  setCurrentExperience] = useState(rest.currentExperience ?? 0);
@@ -61,7 +61,7 @@ export function ChallengesProvier({
 
 
     useEffect(() =>{
-        
+
         Cookies.set('level', String(level)); //seta os dados nos cookies
         Cookies.set('currentExperience', String(currentExperience));
         Cookies.set('challengesCompleted', String(challengesCompleted));
