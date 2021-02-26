@@ -61,10 +61,12 @@ export function ChallengesProvier({
 
 
     useEffect(() =>{
+        
         Cookies.set('level', String(level)); //seta os dados nos cookies
         Cookies.set('currentExperience', String(currentExperience));
         Cookies.set('challengesCompleted', String(challengesCompleted));
-    },[level,currentExperience,challengesCompleted]);
+
+    }, [level, currentExperience, challengesCompleted]);
 
 
     function levelUp(){
