@@ -30,7 +30,7 @@
 
 ![imagem do projeto Pomodoro](link da imagem upada no github)
 
-<a href="">Demonstração</a>
+<a href="https://pomodoro-git-main-lucasandrius.vercel.app/" target="_blank">Demonstração</a>
 
 ## [](https://github.com/LucasAndrius/pomodoro#--sobre-o-projeto) 💻 Sobre o projeto
 
